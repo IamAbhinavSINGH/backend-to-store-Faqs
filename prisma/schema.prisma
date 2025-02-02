@@ -24,8 +24,9 @@ model FAQ{
 
 model Translation{
   id              String        @id     @default(uuid())
-  faqId           String        @unique
+  faqId           String 
   faq             FAQ           @relation(fields: [faqId] , references: [id] , onDelete: Cascade)
   languageCode    String        // langaude code like "en" , "hi" , "bn"
   question        String
+  answer          String
 }
